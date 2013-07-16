@@ -1,0 +1,3 @@
+text/html; lynx -dump %s; nametemplate=%s.html; copiousoutput
+# text/html; ~/.mutt/parse_html.py %s; copiousoutput
+application/*; open -W %s;

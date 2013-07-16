@@ -125,7 +125,7 @@ set forward_quote                    # include message in forwards
 
 # aliases and autocomplete
 source $alias_file
-set query_command = "~/.mutt/contacts.rb '%s' 2> /dev/null"
+set query_command = "~/.mutt/scripts/contacts.rb '%s' 2> /dev/null"
 bind editor <Tab> complete-query
 bind editor \Ct complete
 
