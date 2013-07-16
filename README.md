@@ -4,6 +4,18 @@ My Mutt setup
 
 ## Installation
 
+Open up your Keychain then add two accounts (obviously fill in your info for these):
+
+For IMAP
+Keychain Item Name: https://outlook.office365.com
+Account Name: trobrock@godaddy.com
+Password: ********
+
+For SMTP
+Keychain Item Name: smtp://smtp.office365.com
+Account Name: trobrock@godaddy.com
+Password: ********
+
 ```
 homesick clone trobrock/trobrock-mutt
 homesick symlink trobrock/trobrock-mutt
