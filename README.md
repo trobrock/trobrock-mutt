@@ -13,6 +13,9 @@ brew install mutt --with-sidebar-path --with-s-lang
 brew install msmtp
 brew install offlineimap
 
+# Run offlineimap in background
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.offline-imap.plist
+
 # Extras, but used in my config
 brew install notmuch
 brew install urlview
