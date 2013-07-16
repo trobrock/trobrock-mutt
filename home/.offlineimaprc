@@ -1,0 +1,49 @@
+[general]
+accounts = work
+ui = ttyui
+fsync = False
+socktimeout = 60
+pythonfile=~/.mutt/scripts/keychain_access.py
+
+autorefresh = 5
+
+[Account work]
+localrepository = work-local
+remoterepository = work-remote
+status_backend = sqlite
+postsynchook = notmuch new
+
+[Repository work-local]
+type = Maildir
+localfolders = ~/mail/work
+# Spaces in pathname are bad. Lets use `archive` which is a simple word
+# Besides, we only need `All Mail` folder.
+# Sup would manage mails on its own.
+# If your GMail language setting is not English, you can execute
+# `offlineimap --info` to find out the name of folder which is
+# translated and encoded after your account is configured.
+nametrans = lambda folder: {'inbox': 'INBOX',
+                            }.get(folder, folder)
+
+[Repository work-remote]
+maxconnections = 4
+type = IMAP
+ssl = yes
+sslcacertfile = ~/.mutt/certificates/cacert.pem
+remotehost = outlook.office365.com
+remoteuser = trobrock@godaddy.com
+remotepasseval = get_keychain_pass(account="trobrock@godaddy.com", server="outlook.office365.com")
+remoteport = 993
+nametrans = lambda folder: {'INBOX': 'inbox',
+                            'jenkins': 'jenkins',
+                            'errors': 'errors',
+                            'github': 'github',
+                            'chef_run_failed': 'chef_run_failed',
+                            'archive': 'archive',
+                            'cron': 'cron',
+                            }.get(folder, folder)
+folderfilter = lambda folder: folder in ['INBOX', 'jenkins', 'errors', 'github', 'chef_run_failed', 'archive', 'cron']
+# Or, if you have a lot of mail and don't want to wait for a long time before
+# using sup, you can archive all your old mails on Gmail and only sync the
+# inbox with the following line replacing the previous `folderfilter` line:
+# folderfilter = lambda folder: folder == 'INBOX'
