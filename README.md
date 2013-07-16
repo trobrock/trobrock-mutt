@@ -7,6 +7,17 @@ My Mutt setup
 ```
 homesick clone trobrock/trobrock-mutt
 homesick symlink trobrock/trobrock-mutt
+
+# Core tools
+brew install mutt --with-sidebar-path --with-s-lang
+brew install msmtp
+brew install offlineimap
+
+# Extras, but used in my config
+brew install notmuch
+brew install urlview
+brew install lynx
+
 touch ~/.mutt/{alias,signature}
 ```
 
