@@ -2,3 +2,6 @@ home/.mutt/alias
 home/.mutt/signature
 *.un~
 home/.offlineimap
+*.pyc
+home/.mutt/temp
+home/.mutt/cache
