@@ -72,6 +72,8 @@ macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 
 macro index,pager A   "<tag-thread><tag-prefix-cond><save-message>+work/archive<enter>"  "archive all in thread"
 macro index,pager a   "<save-message>+work/archive<enter>"                               "archive message"
+macro index       -   "<limit>all\n"                                                     "show all messages (undo limit)"
+macro index       M   "<limit>~b @trobrock | ~F\n"                                       "show all message to me"
 macro index       \C_ "<tag-pattern>~N<enter><tag-prefix-cond>N<untag-pattern>~T<enter>" "mark all as read"
 
 # Sidebar Navigation ---------------------------------
@@ -90,7 +92,6 @@ unset markers              # no ugly plus signs
 set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
 alternative_order text/plain text/enriched text/html
 auto_view text/html
-macro index - "<limit>all\n" "show all messages (undo limit)"
 
 # Pager Key Bindings ---------------------------------
 bind pager k  previous-line
@@ -147,7 +148,6 @@ mailboxes +work/INBOX \
           +work/github \
           +work/jenkins \
           +work/errors \
-          +work/chef_run_failed \
           +work/cron \
           +work/archive \
           +work/drafts
