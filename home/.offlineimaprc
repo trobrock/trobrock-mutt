@@ -40,8 +40,9 @@ nametrans = lambda folder: {'INBOX': 'inbox',
                             'github': 'github',
                             'archive': 'archive',
                             'cron': 'cron',
+                            'chef_run_failed': 'chef_run_failed',
                             }.get(folder, folder)
-folderfilter = lambda folder: folder in ['INBOX', 'jenkins', 'errors', 'github', 'archive', 'cron']
+folderfilter = lambda folder: folder in ['INBOX', 'jenkins', 'errors', 'github', 'archive', 'cron', 'chef_run_failed']
 # Or, if you have a lot of mail and don't want to wait for a long time before
 # using sup, you can archive all your old mails on Gmail and only sync the
 # inbox with the following line replacing the previous `folderfilter` line:

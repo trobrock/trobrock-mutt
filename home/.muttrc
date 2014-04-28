@@ -145,6 +145,7 @@ set spoolfile = "+work/INBOX"
 
 # Mailboxes to show in the sidebar.
 mailboxes +work/INBOX \
+          +work/chef_run_failed \
           +work/github \
           +work/jenkins \
           +work/errors \
