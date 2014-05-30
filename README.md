@@ -24,7 +24,7 @@ chmod 600 ~/.msmtprc
 
 # Core tools
 brew tap flabbergast/muttpatched
-brew install mutt --with-sidebar-patch --with-s-lang
+brew install mutt-patched --with-sidebar-patch --with-s-lang
 brew install msmtp
 brew install offlineimap
 
