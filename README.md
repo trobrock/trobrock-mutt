@@ -18,12 +18,13 @@ Password: ********
 
 ```
 homesick clone trobrock/trobrock-mutt
-homesick symlink trobrock/trobrock-mutt
+homesick symlink trobrock-mutt
 
 chmod 600 ~/.msmtprc
 
 # Core tools
-brew install mutt --with-sidebar-path --with-s-lang
+brew tap flabbergast/muttpatched
+brew install mutt --with-sidebar-patch --with-s-lang
 brew install msmtp
 brew install offlineimap
 
