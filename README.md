@@ -29,7 +29,7 @@ brew install msmtp
 brew install offlineimap
 
 # Run offlineimap in background
-ln -sfv /usr/local/opt/offlineimap-imap/*.plist ~/Library/LaunchAgents
+ln -sfv /usr/local/opt/offline-imap/*.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.offline-imap.plist
 
 # Extras, but used in my config
